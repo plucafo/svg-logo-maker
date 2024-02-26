@@ -5,39 +5,50 @@ const inquirer = require("inquirer");
 // TODO: Create an array of questions for user input
 const questions = [
   {
-    type: "input",
-    name: "title",
-    message: "Enter project title:",
+    type: "list",
+    name: "shape",
+    message: "Please select a shape for your logo:",
+    choices: ["Square", "Circle", "Triangle"],
   },
   {
     type: "input",
-    name: "description",
-    message: "Enter project description:",
+    name: "color",
+    message: "Please enter a color for the shape:",
   },
   {
     type: "confirm",
-    name: "includeLicense",
-    message: "Would you like to include a license section and badge?:",
-  },
-  {
-    type: "list",
-    name: "license",
-    message: "Please select your license from the list:",
-    choices: ["Apache", "GNU", "MIT"],
+    name: "happy",
+    message: function (answers) {
+      return `
+         Are you happy with your choices? 
+      **************************************
+                  Shape: \x1b[32m${answers.shape}\x1b[0m
+                  Color: \x1b[32m${answers.color}\x1b[0m
+      **************************************
+      `;
+    },
   },
   // Add more prompts for other information you want to include in the README
 ];
 
 function promptUser() {
-    inquirer
-      .prompt(questions)
-      .then((data) => {
-        // Do stuff with responses here
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Something went wrong:", error);
-      });
-  }
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      // Do stuff with responses here
+      if (answers.happy) {
+        console.log(answers);
+      } else {
+        console.log("Let's start over!");
+        console.log(
+          "=========================================================="
+        );
+        promptUser();
+      }
+    })
+    .catch((error) => {
+      console.error("Something went wrong:", error);
+    });
+}
 
-  promptUser();
+promptUser();
