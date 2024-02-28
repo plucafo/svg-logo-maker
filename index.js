@@ -1,19 +1,26 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const SVG = require('./lib/svg');
+const Shapes = require('./lib/shapes')
 
-// TODO: Create an array of questions for user input
+// Questions array for inquirer prompt
 const questions = [
   {
-    type: "list",
-    name: "shape",
-    message: "Please select a shape for your logo:",
-    choices: ["Square", "Circle", "Triangle"],
+    type: "input",
+    name: "text",
+    message: "Please enter the text for your logo - no more than 3 characters:",
   },
   {
     type: "input",
     name: "color",
     message: "Please enter a color for the shape:",
+  },
+  {
+    type: "list",
+    name: "shape",
+    message: "Please select a shape for your logo:",
+    choices: ["Square", "Circle", "Triangle"],
   },
   {
     type: "confirm",
@@ -22,27 +29,28 @@ const questions = [
       return `
          Are you happy with your choices? 
       **************************************
+                  Text:  \x1b[32m${answers.text}\x1b[0m
                   Shape: \x1b[32m${answers.shape}\x1b[0m
                   Color: \x1b[32m${answers.color}\x1b[0m
       **************************************
-      `;
+                     `;
     },
   },
-  // Add more prompts for other information you want to include in the README
+  // Add more prompts as needed
 ];
 
+// Inquirer prompt function
 function promptUser() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      // Do stuff with responses here
+      // Do stuff with answers here
       if (answers.happy) {
         console.log(answers);
       } else {
-        console.log("Let's start over!");
-        console.log(
-          "=========================================================="
-        );
+        console.log(`
+                > Let's start over! <
+========================================================`);
         promptUser();
       }
     })
