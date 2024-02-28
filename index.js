@@ -1,8 +1,8 @@
 // Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const SVG = require('./lib/svg');
-const Shapes = require('./lib/shapes')
+const SVG = require("./lib/svg");
+const Shapes = require("./lib/shapes");
 
 // Questions array for inquirer prompt
 const questions = [
@@ -46,7 +46,7 @@ function promptUser() {
     .then((answers) => {
       // Do stuff with answers here
       if (answers.happy) {
-        console.log(answers);
+        createSVGFile(answers);
       } else {
         console.log(`
                 > Let's start over! <
@@ -57,6 +57,33 @@ function promptUser() {
     .catch((error) => {
       console.error("Something went wrong:", error);
     });
+}
+
+function createSVGFile(answers) {
+  const svg = new SVG();
+
+  // Set text based on user's input
+  svg.setText(answers.text, answers.color);
+
+  // Create and set shape based on user's input
+  switch (answers.shape) {
+    case "Square":
+      svg.setShape(Shapes.square());
+      break;
+    case "Circle":
+      svg.setShape(Shapes.circle());
+      break;
+    case "Triangle":
+      svg.setShape(Shapes.triangle());
+      break;
+  }
+  // Render SVG content
+  const svgContent = svg.render();
+
+  // Write SVG content to a file
+  fs.writeFileSync("logo.svg", svgContent);
+
+  console.log("SVG file created successfully: logo.svg");
 }
 
 promptUser();
