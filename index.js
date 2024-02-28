@@ -13,8 +13,8 @@ const questions = [
   },
   {
     type: "input",
-    name: "color",
-    message: "Please enter a color for the shape:",
+    name: "textColor",
+    message: "Please enter a color for the text:",
   },
   {
     type: "list",
@@ -23,15 +23,21 @@ const questions = [
     choices: ["Square", "Circle", "Triangle"],
   },
   {
+    type: "input",
+    name: "shapeColor",
+    message: "Please enter a color for the shape:",
+  },
+  {
     type: "confirm",
     name: "happy",
     message: function (answers) {
       return `
          Are you happy with your choices? 
       **************************************
-                  Text:  \x1b[32m${answers.text}\x1b[0m
-                  Shape: \x1b[32m${answers.shape}\x1b[0m
-                  Color: \x1b[32m${answers.color}\x1b[0m
+                     Text: \x1b[32m${answers.text}\x1b[0m
+               Text Color: \x1b[32m${answers.textColor}\x1b[0m
+                    Shape: \x1b[32m${answers.shape}\x1b[0m
+              Shape Color: \x1b[32m${answers.shapeColor}\x1b[0m
       **************************************
                      `;
     },
@@ -63,18 +69,18 @@ function createSVGFile(answers) {
   const svg = new SVG();
 
   // Set text based on user's input
-  svg.setText(answers.text, answers.color);
+  svg.setText(answers.text, answers.textColor);
 
   // Create and set shape based on user's input
   switch (answers.shape) {
     case "Square":
-      svg.setShape(Shapes.square());
+      svg.setShape(Shapes.square(answers.shapeColor));
       break;
     case "Circle":
-      svg.setShape(Shapes.circle());
+      svg.setShape(Shapes.circle(answers.shapeColor));
       break;
     case "Triangle":
-      svg.setShape(Shapes.triangle());
+      svg.setShape(Shapes.triangle(answers.shapeColor));
       break;
   }
   // Render SVG content
