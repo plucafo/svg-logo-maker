@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709227340450" clover="3.2.0">
-  <project timestamp="1709227340450" name="All files">
-    <metrics statements="12" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="5" elements="21" coveredelements="13" complexity="0" loc="12" ncloc="12" packages="1" files="2" classes="2"/>
+<coverage generated="1709578763929" clover="3.2.0">
+  <project timestamp="1709578763929" name="All files">
+    <metrics statements="26" coveredstatements="21" conditionals="7" coveredconditionals="4" methods="8" coveredmethods="8" elements="41" coveredelements="33" complexity="0" loc="26" ncloc="26" packages="1" files="2" classes="2"/>
     <file name="shapes.js" path="/Users/phil/bootcamp/challenges/svg-logo-maker/lib/shapes.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <line num="3" count="1" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
     </file>
     <file name="svg.js" path="/Users/phil/bootcamp/challenges/svg-logo-maker/lib/svg.js">
-      <metrics statements="8" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
+      <metrics statements="22" coveredstatements="17" conditionals="7" coveredconditionals="4" methods="5" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="15" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
       <line num="23" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="32" count="1" type="cond" truecount="1" falsecount="2"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="37" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
