@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1709227340450" clover="3.2.0">
+  <project timestamp="1709227340450" name="All files">
+    <metrics statements="12" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="5" elements="21" coveredelements="13" complexity="0" loc="12" ncloc="12" packages="1" files="2" classes="2"/>
+    <file name="shapes.js" path="/Users/phil/bootcamp/challenges/svg-logo-maker/lib/shapes.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+    </file>
+    <file name="svg.js" path="/Users/phil/bootcamp/challenges/svg-logo-maker/lib/svg.js">
+      <metrics statements="8" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
