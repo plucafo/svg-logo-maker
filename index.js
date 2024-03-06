@@ -2,6 +2,9 @@
 const inquirer = require("inquirer");
 const { createSVGFile } = require("./lib/svg");
 
+// Create an array of valid color names a user can enter
+const validColorNames = ["blue", "red", "green", "yellow", "purple", "pink", "black", "orange", "indigo", "violet", "cyan", "turquoise", "white", "grey"]
+
 // Questions array for inquirer prompt
 const questions = [
   {
@@ -13,6 +16,15 @@ const questions = [
     type: "input",
     name: "textColor",
     message: "Please enter a color for the text:",
+    validate: (color) => {
+      const lowercaseColor = color.toLowerCase();
+      if (validColorNames.includes(lowercaseColor)) {
+        return true;
+      } else {
+        return 'Please enter a valid color name.';
+        return false;
+      }
+    }
   },
   {
     type: "list",
@@ -24,6 +36,15 @@ const questions = [
     type: "input",
     name: "shapeColor",
     message: "Please enter a color for the shape:",
+    validate: (color) => {
+      const lowercaseColor = color.toLowerCase();
+      if (validColorNames.includes(lowercaseColor)) {
+        return true;
+      } else {
+        return 'Please enter a valid color name.';
+        return false;
+      }
+    }
   },
   {
     type: "confirm",
